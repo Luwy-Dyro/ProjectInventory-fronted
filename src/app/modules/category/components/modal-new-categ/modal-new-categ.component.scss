@@ -1,0 +1,12 @@
+.category-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.category-container > *{
+    width: 100%;
+}
+
+.md_veteg_buttons{
+    justify-content: right;
+}

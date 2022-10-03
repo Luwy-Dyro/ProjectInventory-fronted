@@ -20,4 +20,38 @@ export class CategoryService {
 
   }
 
+
+  saveCategories(body: any){
+
+    const endpoint = `${base_url}/categories`;
+
+    return this.service.post(endpoint, body)
+
+  }
+
+  updateCategories(body: any, id: any){
+
+    const endpoint = `${base_url}/categories/${id}`;
+
+    return this.service.put(endpoint, body)
+
+  }
+
+  deleteCategories(id: any){
+
+    const endpoint = `${base_url}/categories/${id}`;
+
+    return this.service.delete(endpoint)
+
+  }
+
+
+  getCategoriesById(id: any){
+
+    const endpoint = `${base_url}/categories/${id}`;
+
+    return this.service.get(endpoint)
+
+  }
+
 }
