@@ -33,7 +33,7 @@ export class CategoryComponent implements OnInit {
 
   getCategories(){
 
-    this.categService.getcategories()
+    this.categService.getcategories()     
         .subscribe( (data:any) => {
           console.log(data);
           this.processCategoriesResponse(data)
@@ -61,6 +61,7 @@ export class CategoryComponent implements OnInit {
 
 
   openCategory(){
+    
     const dialogRef = this.dialog.open(ModalNewCategComponent   , {
       width: '450px'
       // data: {name: this.name, animal: this.animal},

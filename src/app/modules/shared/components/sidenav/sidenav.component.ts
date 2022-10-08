@@ -14,6 +14,7 @@ export class SidenavComponent implements OnInit {
     {      name: "Home",      route: "home", ico:"home"    },
     {      name: "Categories",      route: "category", ico: "category"    },
     {      name: "Products",      route: "product", ico: "production_quantity_limits"    }
+    
   ]
 
   constructor(media: MediaMatcher ) { 
