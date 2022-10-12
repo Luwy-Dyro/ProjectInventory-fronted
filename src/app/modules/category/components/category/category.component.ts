@@ -6,6 +6,7 @@ import { CategoryService } from '../../../shared/services/category.service';
 import { ModalNewCategComponent } from '../modal-new-categ/modal-new-categ.component';
 import { ConfirmComponent } from '../../../shared/components/confirm/confirm.component';
 import { MatPaginator } from '@angular/material/paginator';
+import { UtilService } from '../../../shared/services/util.service';
 
 @Component({
   selector: 'app-category',
@@ -13,14 +14,21 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
+  
+  isAdmin: any
 
   constructor(private categService: CategoryService, 
     public dialog: MatDialog,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private util: UtilService
     ) { }
 
   ngOnInit(): void {
     this.getCategories()
+    this.isAdmin =  this.util.isAdmin();
+    //console.log(this.util.getRoles());
+
+    
   }
 
   displayedColumns: string[] = ['id', 'name', 'description', 'actions']
