@@ -48,4 +48,16 @@ export class ProductService {
   }
 
 
+  
+  exportProducts(){
+
+    const endpoint = `${base_url}/products/export/excel`;
+
+    return this.http.get(endpoint, {
+      responseType: 'blob'
+    })
+
+  }
+
+
 }

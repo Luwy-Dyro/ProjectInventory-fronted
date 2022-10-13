@@ -165,6 +165,21 @@ export class CategoryComponent implements OnInit {
   }
 
 
+  exportexcel(){
+
+    this.categService.exportCategories()
+      .subscribe( (data:any) => {
+        let file = new Blob([data], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'})
+        let fileUrl = URL.createObjectURL(file)
+        var anchor = document.createElement("a")
+        anchor.download = "categories.xlsx"
+        anchor.href = fileUrl
+        anchor.click()
+
+        this.openSnackbar("File export completed", "Success")
+      })
+  }
+
 
 }
 

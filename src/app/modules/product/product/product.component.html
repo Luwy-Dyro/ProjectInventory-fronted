@@ -16,10 +16,13 @@
     <mat-card-header>
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
             <ul fxLayout="row" fxLayoutGap="20">
-                <button mat-raised-button color="primary" (click)="openProductDialog()"> Add product </button>    
                 <li>
+                <button mat-raised-button color="primary" (click)="openProductDialog()"> Add product </button>    
                 </li>
 
+                <li>
+                    <button mat-button color="primary" (click)="exportexcel()" > Export Excel </button>    
+                </li>
             </ul>
         </div>
 
